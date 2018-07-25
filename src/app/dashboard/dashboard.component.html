@@ -1,0 +1,24 @@
+<div class="container shots">
+    <div class="row">
+      	<div *ngFor="let handcrafter of handcrafters; let i = index" class="  col-xl-3 col-lg-3 col-sm-6 col-xs-6">
+      		<div class= "row inner-box-margin-top">
+      			<div class="col-md-12 inner-box-top">
+      				<a routerLink="/detail/{{handcrafter.id}}">{{handcrafter.id}}</a>
+      			</div>
+      		</div>
+      		<div class= "row inner-box-margin-down ">
+      			<div class="col-md-6 inner-box-down" >
+      				<div><a routerLink="/detail/{{handcrafter.id}}">{{handcrafter.name}}</a></div>
+      			</div>
+        		<div class="col-md-6 inner-box-down" >
+        			<div> panel2</div>
+        		</div>
+        	</div>
+
+      </div>
+
+    </div>
+
+</div>
+
+

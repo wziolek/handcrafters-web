@@ -1,0 +1,73 @@
+/*/* AppComponent's private CSS styles */
+h1 {
+  font-size: 1.2em;
+  color: #999;
+  margin-bottom: 0;
+}
+h4{
+
+}
+body{
+   background-color: #F4F4F4; 
+}
+nav{
+  background-color: black;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: white;
+} 
+
+nav a {
+
+  text-decoration: none;
+  margin-top: 11px;
+  display: inline-block;
+  vertical-align: middle;
+}
+nav a:visited, a:link {
+  color: white;
+}
+
+nav a:hover {
+  color: #9f8274;
+}
+nav a.active {
+  color: #039be5;
+}
+
+nav:hover{
+/*-webkit-filter: invert(100%);
+-moz-filter: invert(100%);
+-o-filter: invert(100%);
+-ms-filter: invert(100%);*/
+}
+#wrap{
+  margin-top:59px;
+  height: 150px;
+  background-color:#606060;
+}
+#wrap h4,.wrap-inner{
+  padding-top: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+}
+.wrap-inner-menu{
+  margin-top: 20px;
+   background-color:grey;
+  text-align: center;
+}
+#wrap a{
+   color: white;
+}
+    
+footer{
+  background-color: white;
+}
+.logo_footer{
+-webkit-filter: invert(100%);
+-moz-filter: invert(100%);
+-o-filter: invert(100%);
+-ms-filter: invert(100%);
+}

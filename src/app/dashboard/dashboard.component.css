@@ -1,0 +1,36 @@
+.shots{
+  margin-top: 50px;
+  margin-bottom: 50px
+
+}
+
+.shots_type{
+background-color: grey;
+
+}
+.inner-box-top{
+
+  background-color: grey;
+  border-style: solid;
+  border-width: 0.5em;
+/*    border-bottom-width: 3em !important;*/
+  border-color: white;
+  height:200px;
+  width: 250px;
+
+}
+.inner-box-margin-top{
+  margin:20px 5px 0;
+
+}
+.inner-box-margin-down {
+  margin:0 5px 0;
+  background-color: white;
+}
+
+
+.shot-detail{
+background-color: white;
+    border-style: solid;
+    border-color: white;
+}

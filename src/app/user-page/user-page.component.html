@@ -1,0 +1,13 @@
+<p>
+  user-page works!
+</p>
+<div *ngIf="handcrafter">
+  <h2>{{handcrafter.login | uppercase}} Details</h2>
+  <div><span>id: </span>{{handcrafter.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="handcrafter.name" placeholder="name"/>
+    </label>
+  </div>
+<button (click)="goBack()">go back</button>
+</div>

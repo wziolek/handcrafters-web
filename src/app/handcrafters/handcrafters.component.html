@@ -1,0 +1,12 @@
+
+<h2>my </h2>
+
+<ul class="handcrafters">
+  <li *ngFor="let handcrafter of handcrafters">
+  	<a routerLink="/detail/{{handcrafter.id}}">
+   		 <span class="badge">{{handcrafter.id}}</span> {{handcrafter.name}}
+	</a>
+  </li>
+</ul>
+ 
+<app-handcrafter-detail [handcrafter]="selectedHandcrafter"></app-handcrafter-detail>
