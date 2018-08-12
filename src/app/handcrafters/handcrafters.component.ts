@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Handcrafter } from '../handcrafter';
+
 import { HandcrafterService} from '../handcrafter.service';
+
 
 @Component({
   selector: 'app-handcrafters',
@@ -8,7 +12,6 @@ import { HandcrafterService} from '../handcrafter.service';
   styleUrls: ['./handcrafters.component.css']
   
 })
-
 
 export class HandcraftersComponent implements OnInit {
   handcrafters: Handcrafter[];

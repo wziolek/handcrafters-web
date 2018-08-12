@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'handcrafters';
+	// TODO: temporary ugly hack
+	current_user = 11;
+  	title = 'handcrafters';
 }

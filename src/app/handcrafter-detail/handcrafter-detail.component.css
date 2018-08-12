@@ -1,30 +1,214 @@
-/* HeroDetailComponent's private CSS styles */
-label {
-  display: inline-block;
-  width: 3em;
-  margin: .5em 0;
-  color: #607D8B;
-  font-weight: bold;
+/* HandcrafterDetailComponent's private CSS styles */
+#handcrafter-detail{
+	padding-top: 90px;
+	padding-bottom: 30px;
 }
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
+.user-header{
+
 }
-button {
-  margin-top: 20px;
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer; cursor: hand;
+.list-group .list-group-item{
+	list-style-type: none;
+	padding: 0px 0px 0px 0px;
 }
-button:hover {
-  background-color: #cfd8dc;
+ul {
+	list-style-type: none;
 }
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
+h2{
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: -.01em;
+	color: #444;
 }
+h3{
+	margin: 0 0 10px 0;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .02em;
+	text-transform: uppercase;
+	color: #999;
+}
+ h4{
+	font-size: 15px;
+	font-weight: 500;
+	color: #999;    
+}
+h5{
+	font-size: 13px;
+	font-weight: 500;
+	color: #999; 
+}
+
+.col-right-top{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.col-right-bottom{
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.col-right{
+	background-color: white;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #e8e8e8;
+	clear: left;
+	float: left;
+	font-size: 13px;
+	line-height: 19px;
+	position: relative;
+	padding: 20px 30px;
+	width: 100%;
+}
+.list-group-item {
+	text-decoration: none;
+	border:0px !important;
+}
+.user_description{
+	line-height: 1.5em;
+	height: 6em !important;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	width: 100%;
+}
+.user_email{
+	 color: #607d8b;
+	 font-weight: 700;
+	 margin-bottom: 10px;
+}
+.user_email:hover{
+	 color: #465C66;
+	 font-weight: 700;
+	 margin-bottom: 10px;
+}
+.creation_date, .last_login{
+
+}
+.message-btn{
+	background: #607d8b;
+	color: white;
+	margin-top: 10px;
+	border-radius: 4px;
+	display: inline-block;
+	padding: 10px 15px 11px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 14px;
+	letter-spacing: .02em;
+	vertical-align: middle;
+	border: none;
+	text-decoration: none;
+	position: relative;
+	margin-bottom: 15px;
+}
+.message-btn:hover{
+	text-decoration: none;
+	background: #465C66;
+}
+
+/*Shots*/
+.grid {
+    margin: 0;
+}
+.grid-pad {
+    padding: 10px 0;
+}
+.grid-pad > .row > [class*='col-']:last-of-type {
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.inner-box-top {
+	padding-left: 0px !important;
+    border-style: solid;
+    border-width: 8px;
+    border-color: white;
+    overflow: hidden;
+}
+.inner-box-top >a{
+    display: none;
+    position: absolute;
+    left: 0px;
+    background-color: rgba(255,255,255, 0.7);
+    color: #444;
+    font-size: 0.8em;
+    height: 100%;
+}
+.short_description{
+    line-height: 1em;
+    height: 3em !important;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+}
+.inner-box-top:hover >a{
+    display: inline-block;
+    text-decoration: none;
+}
+.inner-box-top img{
+    width: 100%;
+    height: 100%;
+}
+.inner-box-top p{
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size:  0.8em;
+    color: #777;
+}
+.inner-box-down {
+    background-color: white;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width:100%;
+    margin-bottom:10px;
+}
+.inner-box-down >ul{
+    padding-left: 10px;
+}
+.shot-detail{
+    background-color: red;
+    border-style: solid;
+    border-color: white;
+}
+a.user_link_date{
+    color: #777777;
+}
+a.shot_name{
+    color: #777777;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+  /*  padding-left: 20px;*/
+    padding-left: 30px;
+}
+[class*='col-']:last-of-type {
+    padding-right: 0;
+}
+@media (max-width: 600px) {
+
+   .handcrafter-shots{
+   	margin-top: 20px;
+   }
+}
+@media (max-width: 1024px) {
+
+    .handcrafter-shots{
+   	margin-top: 20px;
+   }
+}
+
+
+
+
+
+
+
+

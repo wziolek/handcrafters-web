@@ -1,48 +1,37 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-.shots{
-    margin-top: 90px;
-    margin-bottom: 20px;
-}
+/*Shots*/
 .grid {
     margin: 0;
 }
 .grid-pad {
-    padding: 10px 0;
+/*    padding: 10px 0;*/
 }
-.grid-pad > [class*='col-']:last-of-type {
+.grid-pad > .row > [class*='col-']:last-of-type {
     padding-right: 20px;
-
+    padding-bottom: 20px;
 }
-.col-1-4 {
-    width: 25%;
 
-}
 .inner-box-top {
-    margin-top:35px;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+	padding-left: 0px !important;
     border-style: solid;
     border-width: 8px;
     border-color: white;
     overflow: hidden;
-
 }
 .inner-box-top >a{
     display: none;
     position: absolute;
-    left: 0;
+    left: 0px;
     background-color: rgba(255,255,255, 0.7);
     color: #444;
-    height: 100%;
     font-size: 0.8em;
+    height: 100%;
 }
 .short_description{
-    line-height: 1.5em;
-    height: 6em !important;
+    line-height: 1em;
+    height: 3em !important;
     overflow: hidden;
     white-space: normal;
     text-overflow: ellipsis;
-    width: 100%;
     padding-left: 5px;
 }
 .inner-box-top:hover >a{
@@ -66,7 +55,8 @@
     background-color: white;
     padding-left: 0px !important;
     padding-right: 0px !important;
-
+    width:100%;
+    margin-bottom:35px;
 }
 .inner-box-down >ul{
     padding-left: 10px;
@@ -84,20 +74,7 @@ a.shot_name{
     font-weight: bold;
     font-size: 0.8em;
 }
-a.user_name{
-    text-decoration: none;
-    color: #607d8b;
-    font-weight: 600;
-    font-size: 0.9em;
 
-}
-a.user_name:hover{
-    text-decoration: none;
-    color: #465C66;
-}
-.page_title{
-    margin-bottom: 20px;
-}
 [class*='col-'] {
     float: left;
     padding-right: 20px;
@@ -115,24 +92,3 @@ a.user_name:hover{
  .col-1-4{
     width: 50%; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

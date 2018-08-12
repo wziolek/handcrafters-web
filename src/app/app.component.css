@@ -1,39 +1,34 @@
 /*/* AppComponent's private CSS styles */
 h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
+    font-size: 1.2em;
+    color: #999;
+    margin-bottom: 0;
 }
-h4{
 
-}
 body{
-   background-color: #F4F4F4; 
+    background-color: #F4F4F4; 
 }
 nav{
-  background-color: black;
+    background-color: black;
 }
-
 .custom-toggler.navbar-toggler {
-  border-color: white;
+    border-color: white;
 } 
-
 nav a {
-
-  text-decoration: none;
-  margin-top: 11px;
-  display: inline-block;
-  vertical-align: middle;
+    text-decoration: none;
+    margin-top: 11px;
+    display: inline-block;
+    vertical-align: middle;
 }
 nav a:visited, a:link {
-  color: white;
+    color: white;
 }
 
 nav a:hover {
-  color: #9f8274;
+    color: #9f8274;
 }
 nav a.active {
-  color: #039be5;
+    color: #039be5;
 }
 
 nav:hover{
@@ -43,31 +38,31 @@ nav:hover{
 -ms-filter: invert(100%);*/
 }
 #wrap{
-  margin-top:59px;
-  height: 150px;
-  background-color:#606060;
+    margin-top:59px;
+    height: 90px;
+    background-color:#606060;
 }
 #wrap h4,.wrap-inner{
-  padding-top: 20px;
-  color: white;
-  text-align: center;
-  font-size: 1em;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
 }
 .wrap-inner-menu{
-  margin-top: 20px;
-   background-color:grey;
-  text-align: center;
+    margin-top: 20px;
+    background-color:grey;
+    text-align: center;
 }
 #wrap a{
-   color: white;
+    color: white;
 }
     
 footer{
-  background-color: white;
+    background-color: white;
 }
 .logo_footer{
--webkit-filter: invert(100%);
--moz-filter: invert(100%);
--o-filter: invert(100%);
--ms-filter: invert(100%);
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -ms-filter: invert(100%);
 }

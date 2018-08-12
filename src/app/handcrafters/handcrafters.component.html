@@ -1,12 +1,44 @@
+<div class="container handcrafter">
+	<div class="page_title"><h3>Handcrafters</h3></div>
 
-<h2>my </h2>
+	<div class="row grid grid-pad">
+	  <a *ngFor="let handcrafter of handcrafters" class="col-1-4"
+	      routerLink="/user/{{handcrafter.id}}">
+	    <div class="module">
+	      <h5 routerLink="/user/{{handcrafter.id}}">{{handcrafter.name}}</h5>
+	    </div>
+	  </a>
+	</div>
+</div>
 
-<ul class="handcrafters">
-  <li *ngFor="let handcrafter of handcrafters">
-  	<a routerLink="/detail/{{handcrafter.id}}">
-   		 <span class="badge">{{handcrafter.id}}</span> {{handcrafter.name}}
-	</a>
-  </li>
-</ul>
- 
-<app-handcrafter-detail [handcrafter]="selectedHandcrafter"></app-handcrafter-detail>
+<!-- <div class="container" id="handcrafter-detail">
+	<div class=" row ">
+  		<div class="col col-md-4 text-center">
+  			<div id="profile-info" class="col-right col-right-top">
+				<div *ngFor="let handcrafter of handcrafters">
+					<ul class= "list-group">
+						<li class="list-group-item" class="user_avatar"><img src="{{handcrafter.avatar}}" class="rounded-circle" width="50"></li>
+		  				<li class="list-group-item"><h2>{{handcrafter.name}}</h2></li>
+		  				<li class="list-group-item"><a><h4>{{handcrafter.city}}</h4></a></li>
+		  				<li class="list-group-item user_email" ><a>{{handcrafter.email}}</a></li>
+						<li class="list-group-item" class="user_description"><a>{{handcrafter.user_description}}</a>
+
+						<li class="list-group-item" ><a class="message-btn "  href="" original-title="Send a message about a work opportunity"> <span>Message</span></a></li>
+						<li class="list-group-item" class="creation_date"><a><h5>Creation date: {{handcrafter.creation_date}}</h5></a>
+						<li class="list-group-item" class="last_login"><a><h5>Last login: {{handcrafter.last_login}}</h5></a>
+					</ul>
+				</div>
+			</div>
+			<div id="profile-skills" class="col-right">
+				<h3>Skills</h3>
+				<li class="list-group-item" class="last_login"><a>{{handcrafter.skills}}</a>
+			</div>
+			<div id="profile-elsewhere" class="col-right col-right-bottom">
+				<h3>Elsewhere</h3>
+			</div>
+		</div>	
+		<div class="col-md-8 handcrafter-shots"> 
+			<app-handcrafter-detail-shots [handcrafter]="handcrafter"></app-handcrafter-detail-shots>
+		</div>
+	</div>
+</div> -->

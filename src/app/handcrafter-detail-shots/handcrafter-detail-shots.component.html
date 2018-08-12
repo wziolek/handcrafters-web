@@ -1,0 +1,28 @@
+
+<div *ngIf="handcrafter" class="grid grid-pad">
+	<div class= "row ">
+		<div class="col-md-4 col-sm-6" *ngFor="let shot of handcrafter.shots">
+			<div class= "row">
+				<div class="col-sm-12 inner-box-top" >
+					<img src="{{shot.url}}">
+					<a routerLink="/shot/{{shot.id}} ">
+						<span class="short_description">
+							<strong>{{shot.name}}</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing consectetur adipiscing elit. Vestibulum interdum lacus liberoconsectetur adipiscing elit. 
+						</span><br><br>
+						<p>{{shot.creation_date}}</p>
+					</a>
+				</div>
+			</div>
+			<div class= "row">
+				<div class="inner-box-down">
+					<ul class="list-inline">
+						<li class="list-inline-item">
+							<a class="shot_name" routerLink="/shot/{{shot.id}}">{{shot.name}}</a>
+							<a class="" routerLink="/shot/{{shot.id}}">Edit</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,24 +1,32 @@
 <div class="container shots">
-    <div class="row">
-      	<div *ngFor="let handcrafter of handcrafters; let i = index" class="  col-xl-3 col-lg-3 col-sm-6 col-xs-6">
-      		<div class= "row inner-box-margin-top">
-      			<div class="col-md-12 inner-box-top">
-      				<a routerLink="/detail/{{handcrafter.id}}">{{handcrafter.id}}</a>
-      			</div>
-      		</div>
-      		<div class= "row inner-box-margin-down ">
-      			<div class="col-md-6 inner-box-down" >
-      				<div><a routerLink="/detail/{{handcrafter.id}}">{{handcrafter.name}}</a></div>
-      			</div>
-        		<div class="col-md-6 inner-box-down" >
-        			<div> panel2</div>
-        		</div>
-        	</div>
-
-      </div>
-
-    </div>
-
+	<div class="row shot grid grid-pad">
+		<div *ngFor="let shot of shots" class="col-md-3">
+			<div class= "row ">
+				<div class="col-sm-12  inner-box-top" >
+					<img src="{{shot.url}}">
+					<a routerLink="/shot/{{shot.id}} ">
+						<div class="short_description"><strong>{{shot.name}}</strong><br> Lorem ipsum dolor sit amet, consectetur adipiscing consectetur adipiscing elit. Vestibulum interdum lacus liberoconsectetur adipiscing elit. Vestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum interdum lacus libero,</div><br><p>{{shot.creation_date}}</p></a>
+				</div>	
+			</div>
+			<div class= "row ">
+				<div class="col-sm-12 inner-box-down">
+					<ul class="list-inline">
+<!-- 						<button mat-button [(ngModel)]="shot_id" (click)="openDialog(shot.id)">Open dialog</button> -->
+						<li class="list-inline-item"><a class="shot_name" routerLink="/shot/{{shot.id}}">{{shot.name}}</a> </li>
+					</ul>
+				</div>
+			</div>
+			<div class= "row">
+				<ul class="list-inline"> 
+					<!-- <li class="list-inline-item "><a routerLink ="/user/{{shot.user.id}}"><img src="{{shot.user.avatar}}" class="rounded-circle" width="20"></a></li>
+					<li class="list-inline-item"><a class="user_name" routerLink ="/user/{{shot.user.id}}" >{{shot.user.name}}</a></li> -->
+					<li class="list-inline-item "><a routerLink ="/user/{{shot.user_id}}"><img src="" class="rounded-circle" width="20"></a></li>
+					<li class="list-inline-item"><a class="user_name" routerLink ="/user/{{shot.user_id}}" >Test</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
+
 
 

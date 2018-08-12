@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Handcrafter } from '../handcrafter';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 import { HandcrafterService }  from '../handcrafter.service';
-
+import { Handcrafter } from '../handcrafter';
 
 @Component({
   selector: 'app-handcrafter-detail',
@@ -13,7 +11,8 @@ import { HandcrafterService }  from '../handcrafter.service';
   styleUrls: ['./handcrafter-detail.component.css']
 })
 export class HandcrafterDetailComponent implements OnInit {
-@Input() handcrafter: Handcrafter;
+  @Input() handcrafter: Handcrafter;
+
 
   constructor(
   private route: ActivatedRoute,

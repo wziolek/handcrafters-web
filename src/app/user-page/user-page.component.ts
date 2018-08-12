@@ -11,26 +11,34 @@ import { HandcrafterService }  from '../handcrafter.service';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
-  @Input() handcrafter: Handcrafter;
+  @Input() user: Handcrafter;
+  settingsPage:number;
 
   constructor(
   private route: ActivatedRoute,
   private handcrafterService: HandcrafterService,
-  private location: Location
-  ){}
-
-  ngOnInit() {
-  	this.getHandcrafter();
+  private location: Location,
+  ){
   }
 
-  getHandcrafter(): void {
-    let login = +this.route.snapshot.paramMap.get('id');
-    console.log('login:' + login);	
-    this.handcrafterService.getHandcrafter(login)
-    .subscribe(handcrafter => this.handcrafter = handcrafter);
+  ngOnInit() {
+  	this.getCurrentUser();
+  }
+
+  changeSettingsPage(page: number){
+    this.settingsPage= page;
+  }
+
+  getCurrentUser(): void {
+    this.handcrafterService.getCurrentUser().subscribe(user => this.user = user);
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.handcrafterService.updateHandcrafter(this.user)
+      .subscribe(() => this.goBack());
   }
 }
