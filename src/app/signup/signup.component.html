@@ -1,0 +1,74 @@
+<div class="container">
+  <div [hidden]="submitted" style="width:500px; display: inline-block;">
+    <div [hidden]="message['type']='error'" class="alert alert-danger" role="alert">
+      There are following error in your form:
+      <ul>
+        <li *ngFor="let mess of message['messages']">
+          {{mess}}
+        </li>
+      </ul>
+    </div>
+    <div [hidden]="message['type']='success'" class="alert alert-danger" role="alert">
+      There are following error in your form:
+      <ul>
+        <li *ngFor="let mess of message['messages']">
+          {{mess}}
+        </li>
+      </ul>
+    </div>
+    <h1>Register new handcrafter</h1>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required #handcrafterName>
+    </div>
+    <div class="form-group">
+      <label for="url">Surname</label>
+      <input type="text" class="form-control" id="surname" required #handcrafterSurname>
+    </div>
+    <div class="form-group">
+      <label for="description">Login</label>
+      <input type="text" class="form-control" id="login" required #handcrafterLogin>
+    </div>
+    <div class="form-group">
+      <label for="description">E-mail</label>
+      <input type="email" class="form-control" id="email" required #handcrafterEmail>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" required #handcrafterPassword>
+    </div>
+    <div class="form-group">
+      <label for="password2">Repeat password</label>
+      <input type="password2" class="form-control" id="password2" required #handcrafterPassword2>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" required #handcrafterCity>
+    </div>
+    <div class="form-group">
+      <label for="avatar">Avatar</label>
+      <input type="file" class="form-control" id="avatar" required #handcrafterAvatar>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <!-- <input type="range" min="12" max="110" value="25" class="slider" class="form-control" id="description" required #handcrafterAge>  -->
+      <input type="text" class="form-control" id="age" required #handcrafterAge>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" required #handcrafterDescription></textarea>
+    </div>
+    <div class="form-group">
+      <label for="elswhere">Elswhere</label>
+      <input type="text" class="form-control" id="elswhere" required #handcrafterElswhere>
+    </div>
+    <div class="form-group">
+      <label for="skills">Skills</label>
+      <input type="text" class="form-control" id="skills" required #handcrafterSkills placeholder="Photoshop; Power Point; rysowanie">
+    </div>
+    <button type="submit" class="btn btn-success" (click)="onSubmit(handcrafterName.value, handcrafterSurname.value, handcrafterLogin.value, handcrafterEmail.value, handcrafterPassword.value, handcrafterPassword2.value, handcrafterCity.value, handcrafterAvatar.value, handcrafterAge.value, handcrafterDescription.value, handcrafterElswhere.value, handcrafterSkills.value)">Submit</button>
+  </div>
+  <div [hidden]="!submitted">
+    Your image was submited with success.
+  </div>
+</div>

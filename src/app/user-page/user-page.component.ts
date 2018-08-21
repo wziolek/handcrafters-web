@@ -21,6 +21,8 @@ export class UserPageComponent implements OnInit {
   ){
   }
 
+  submitted = false;
+
   ngOnInit() {
   	this.getCurrentUser();
   }
@@ -37,8 +39,9 @@ export class UserPageComponent implements OnInit {
     this.location.back();
   }
 
-  save(): void {
-    this.handcrafterService.updateHandcrafter(this.user)
-      .subscribe(() => this.goBack());
+  onSubmit(): void {
+    this.handcrafterService.updateHandcrafter(this.user);
+    //this.submitted = true;
+      //.subscribe(() => this.goBack());
   }
 }

@@ -3,9 +3,9 @@
 		<div *ngFor="let shot of shots" class="col-md-3">
 			<div class= "row ">
 				<div class="col-sm-12  inner-box-top" >
-					<img src="{{shot.url}}">
+					<img src="{{shot.image_url}}">
 					<a routerLink="/shot/{{shot.id}} ">
-						<div class="short_description"><strong>{{shot.name}}</strong><br> Lorem ipsum dolor sit amet, consectetur adipiscing consectetur adipiscing elit. Vestibulum interdum lacus liberoconsectetur adipiscing elit. Vestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum iVestibulum interdum lacus liberoelit. Vestibulum interdum lacus libero,</div><br><p>{{shot.creation_date}}</p></a>
+						<div class="short_description"><strong>{{shot.name}}</strong><br>{{shot.description}}</div><br><p>{{shot.created_at}}</p></a>
 				</div>	
 			</div>
 			<div class= "row ">
@@ -18,10 +18,17 @@
 			</div>
 			<div class= "row">
 				<ul class="list-inline"> 
-					<!-- <li class="list-inline-item "><a routerLink ="/user/{{shot.user.id}}"><img src="{{shot.user.avatar}}" class="rounded-circle" width="20"></a></li>
-					<li class="list-inline-item"><a class="user_name" routerLink ="/user/{{shot.user.id}}" >{{shot.user.name}}</a></li> -->
-					<li class="list-inline-item "><a routerLink ="/user/{{shot.user_id}}"><img src="" class="rounded-circle" width="20"></a></li>
-					<li class="list-inline-item"><a class="user_name" routerLink ="/user/{{shot.user_id}}" >Test</a></li>
+					<li class="list-inline-item ">
+						<a routerLink ="/user/{{shot.author.id}}">
+							<img *ngIf="shot.user?.avatar_url;else default_avatar" src="{{shot.user.avatar_url}}" class="rounded-circle" width="20">
+							<ng-template #default_avatar><img src="/assets/img/user_avatar.jpg" class="rounded-circle" width="20"></ng-template>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a class="user_name" routerLink ="/user/{{shot.author.id}}" >{{shot.author.name}}</a>
+					</li>
+					<!-- <li class="list-inline-item "><a routerLink ="/user/{{shot.user_id}}"><img src="" class="rounded-circle" width="20"></a></li>
+					<li class="list-inline-item"><a class="user_name" routerLink ="/user/{{shot.user_id}}" >Test</a></li> -->
 				</ul>
 			</div>
 		</div>

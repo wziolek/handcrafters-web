@@ -1,5 +1,3 @@
-
-import {Deserializable} from "./deserializable";
 import { Shot } from './shot';
 
 export class Handcrafter {
@@ -9,21 +7,17 @@ export class Handcrafter {
   login: string;
   city: string;
   email: string;
-  avatar?: string;
-  age?: number;
+  avatar_url?: string;
+  birthday: string;
   last_login?: string;
   creation_date?: string; 
   password: string;
   shots?:Shot[];
   skills?:string[];
   elsewhere?:string;
-  user_description?: string;
+  description?: string;
 
-  // deserialize(input: any): this {
-  //   Object.assign(this, input);
-  //   return this;
-  // }
-   constructor(id: number, name: string, surname: string, login: string, city: string, email: string) {
+  constructor(id: number, name: string, surname: string, login: string, city: string, email: string) {
     var date = new Date();
     this.id = id;
     this.name = name;

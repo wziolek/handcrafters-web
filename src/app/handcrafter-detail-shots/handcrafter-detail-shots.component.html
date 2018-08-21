@@ -4,12 +4,12 @@
 		<div class="col-md-4 col-sm-6" *ngFor="let shot of handcrafter.shots">
 			<div class= "row">
 				<div class="col-sm-12 inner-box-top" >
-					<img src="{{shot.url}}">
+					<img src="{{shot.image_url}}">
 					<a routerLink="/shot/{{shot.id}} ">
 						<span class="short_description">
 							<strong>{{shot.name}}</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing consectetur adipiscing elit. Vestibulum interdum lacus liberoconsectetur adipiscing elit. 
 						</span><br><br>
-						<p>{{shot.creation_date}}</p>
+						<p>{{shot.created_at}}</p>
 					</a>
 				</div>
 			</div>

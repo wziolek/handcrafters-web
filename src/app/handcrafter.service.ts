@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 
 import { Handcrafter } from './handcrafter';
 import { MessageService } from './message.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
@@ -19,7 +19,7 @@ export class HandcrafterService {
     private messageService: MessageService,
     private http: HttpClient) {}
 
-  private handcraftersUrl = 'api/handcrafters';  // URL to web api
+  private handcraftersUrl = 'https://api.handcrafters.piatkiewicz.com/handcrafters';  // URL to web api
  
 
   /** Log a HandcrafterService message with the MessageService */
@@ -28,7 +28,7 @@ export class HandcrafterService {
   }
   
   getCurrentUser(): Observable<Handcrafter> {
-    var current_user = 11;
+    var current_user = 1;
     const url = `${this.handcraftersUrl}/${current_user}`;
     return this.http.get<Handcrafter>(url).pipe(
       tap(_ => this.log(`fetched handcrafter id=${current_user}`)),
@@ -91,6 +91,54 @@ export class HandcrafterService {
       catchError(this.handleError<Handcrafter>('addHandcrafter'))
     );
   }
+
+  addHandcrafterBase (handcrafter: Handcrafter): Observable<HttpResponse<Handcrafter>> {
+    // const body = new HttpParams()
+    //   .set('name', handcrafter.name)
+    //   .set('surname', handcrafter.surname)
+    //   .set('login', handcrafter.login)
+    //   .set('email', handcrafter.email)
+    //   .set('password', handcrafter.password)
+    //   .set('city', handcrafter.city)
+    //   .set('avatar_url', handcrafter.avatar_url)
+    //   .set('birthday', handcrafter.birthday)
+    //   .set('description', handcrafter.description)
+    //   .set('elsewhere', handcrafter.elsewhere)
+    //   .set('skills', handcrafter.skills.toString());
+    const body = new HttpParams()
+      .set('login', handcrafter.login)
+      .set('email', handcrafter.email)
+      .set('password', handcrafter.password);
+
+    let httpHeaders = new HttpHeaders()
+       .set('Content-Type', 'application/x-www-form-urlencoded')
+
+    return this.http.post<Handcrafter>(this.handcraftersUrl,
+                                body.toString(),
+                                {
+                                  headers: httpHeaders,
+                                  observe: 'response',
+                                  responseType: 'json'
+                                }
+           );
+  }
+
+  createHandcrafter(handcrafter: Handcrafter): any{
+    var ret: any[];
+    let newhandcrafter: Handcrafter;
+    return this.addHandcrafterBase(handcrafter)
+    // .subscribe(
+    //   hand => {
+    //     newhandcrafter = hand.body;
+    //     ret.push(newhandcrafter);
+    //   },
+    //   err => {
+    //     console.log(err);
+    //     //ret.push(['error', err]);
+    //   }
+    // );
+    //return newhandcrafter;
+  } 
  
   /** DELETE: delete the handcrafter from the server */
   deleteHandcrafter (handcrafter: Handcrafter | number): Observable<Handcrafter> {
@@ -105,6 +153,7 @@ export class HandcrafterService {
  
   /** PUT: update the handcrafter on the server */
   updateHandcrafter (handcrafter: Handcrafter): Observable<any> {
+    console.log("saving");
     return this.http.put(this.handcraftersUrl, handcrafter, httpOptions).pipe(
       tap(_ => this.log(`updated handcrafter id=${handcrafter.id}`)),
       catchError(this.handleError<any>('updateHandcrafter'))

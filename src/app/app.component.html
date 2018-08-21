@@ -32,13 +32,16 @@
 						<a class="nav-link" routerLink="/handcrafters">Designers</a>
 					</li>
 				</ul>
-				<ul class="navbar-nav mr-auto float-lg-right">
+				<ul class="navbar-nav float-lg-right">
 					<li>
-						<a class="nav-link" href="../navbar-static-top/" routerLink="/myaccount">My profile</a></li>
+						<a class="nav-link" routerLink="/myaccount">My profile</a>
+					</li>
 					<li>
-						<a class="nav-link" href="../navbar-static-top/">Sign up</a></li>
+						<a class="nav-link" routerLink="/sign-up">Sign up</a>
+					</li>
 					<li>
-						<a class="nav-link" href="../navbar-fixed-top/">Sign in</a></li>
+						<a class="nav-link" routerLink="/login">Sign in</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -69,15 +72,18 @@
 						<a class="nav-link menu_link_2" ngbDropdownToggle routerLink="/dashboard">Now<span class="sr-only">(current)</span>
 						</a>
 						<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-							<button class="dropdown-item">Recent</button>
-							<button class="dropdown-item">Most viewed</button>
-							<button class="dropdown-item">Most comented</button>
+							<button class="dropdown-item">This Past Week</button>
+							<button class="dropdown-item">This Past Month</button>
+							<button class="dropdown-item">This Past Year</button>
+							<button class="dropdown-item">All</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<router-outlet></router-outlet>
+		<div class="content container">
+			<router-outlet></router-outlet>
+		</div>
 		<footer class="container py-5">
 			<div class="row">
 				<div class="col-12 col-md">

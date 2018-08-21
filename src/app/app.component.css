@@ -11,6 +11,10 @@ body{
 nav{
     background-color: black;
 }
+.content {
+    margin-top: 90px;
+    margin-bottom: 20px;
+}
 .custom-toggler.navbar-toggler {
     border-color: white;
 } 

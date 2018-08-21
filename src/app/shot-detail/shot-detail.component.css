@@ -31,3 +31,9 @@ img.img-shot {
     margin-top: 20 px;
 	}
 }
+
+.header-user-name > a{
+    text-decoration: none;
+    color: #1e6189;
+    font-weight: bold;
+}

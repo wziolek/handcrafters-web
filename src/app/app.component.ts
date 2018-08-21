@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	// TODO: temporary ugly hack
+    types = ['Popular', 'Recent', 'Most viewed', 'Most Comented']
 	current_user = 11;
   	title = 'handcrafters';
+    type = 'Popular';
+    sort = 'Shots';
+    time = 'Now';
 }

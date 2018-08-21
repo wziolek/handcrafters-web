@@ -2,16 +2,21 @@
 	<div class= "row  ">
 		<div class="col-md-6 col-right text-center ">
 			<div class="row ">
-				<img src="{{handcrafter.avatar}}" class="rounded-circle " width="50" height="50">
-				<h4>{{shot.name}}</h4><br>
-				<div>{{handcrafter.name}} on {{shot.creation_date}}</div>
+				<img *ngIf="shot.author?.avatar_url;else default_avatar" src="{{shot.author.avatar_url}}" class="rounded-circle" width="50" height="50">
+				<ng-template #default_avatar><img src="/assets/img/user_avatar.jpg" class="rounded-circle" width="50" height="50"></ng-template><br>
+				<h4>{{shot.name}}</h4>
+				<div>
+					<span class="header-user-name">
+						<a routerLink="/user/{{shot.author.id}}">{{shot.author.name}}</a>
+					</span> on {{shot.created_at}}
+				</div>
 			</div>
 			<div calss="row">
-				<img class="img-shot" src="{{ shot.url }}">
+				<img class="img-shot" src="{{ shot.image_url }}">
 			</div>
 		</div>
 		<div class="col-md-4 col-left">
-			{{ shot.description}}
+			{{ shot.description }}
 		</div>
 	</div>
 </div>

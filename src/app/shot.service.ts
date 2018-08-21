@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 
 import { Shot } from './shot';
 import { MessageService } from './message.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
@@ -19,7 +19,7 @@ export class ShotService {
     private messageService: MessageService,
     private http: HttpClient) {}
 
-  private shotsUrl = 'api/shots';  // URL to web api
+  private shotsUrl = 'https://api.handcrafters.piatkiewicz.com/shots';  // URL to web api
  
 
   /** Log a ShotService message with the MessageService */
@@ -73,15 +73,40 @@ export class ShotService {
 
 
   //////// Save methods //////////
- 
-  /** POST: add a new shot to the server */
-  addShot (shot: Shot): Observable<Shot> {
-    return this.http.post<Shot>(this.shotsUrl, shot, httpOptions).pipe(
-      tap((shot: Shot) => this.log(`added shot w/ id=${shot.id}`)),
-      catchError(this.handleError<Shot>('addShot'))
-    );
+
+  /** POST: add a new shot to the server */ 
+  addShotBase (shot: Shot): Observable<HttpResponse<Shot>> {
+    const body = new HttpParams()
+       .set('name', shot.name)
+       .set('description', shot.description)
+       .set('image_url', shot.image_url);
+
+    let httpHeaders = new HttpHeaders()
+       .set('Content-Type', 'application/x-www-form-urlencoded')
+
+    return this.http.post<Shot>(this.shotsUrl,
+                                body.toString(),
+                                {
+                                  headers: httpHeaders,
+                                  observe: 'response',
+                                  responseType: 'json'
+                                }
+           );
   }
- 
+
+  addShot(shot: Shot): Shot{
+    let newshot: Shot;
+    this.addShotBase(shot).subscribe(
+      shot => {
+        newshot = shot.body;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+    return newshot;
+  } 
+
   /** DELETE: delete the shot from the server */
   deleteShot (shot: Shot | number): Observable<Shot> {
     const id = typeof shot === 'number' ? shot : shot.id;

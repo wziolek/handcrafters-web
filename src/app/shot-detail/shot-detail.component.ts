@@ -33,9 +33,6 @@ export class ShotDetailComponent  {
     const id = +this.route.snapshot.paramMap.get('id'); 
     this.shotService.getShot(id)
       .subscribe(shot => this.shot = shot);
-    console.log(this.shot);
-    this.handcrafterService.getHandcrafter(this.shot.user_id)
-      .subscribe(handcrafter => this.handcrafter = handcrafter);
   }
 
   goBack(): void {

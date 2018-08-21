@@ -15,8 +15,10 @@ import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material';
 import { NewShotComponent } from './new-shot/new-shot.component';
 import { HandcrafterDetailShotsComponent } from './handcrafter-detail-shots/handcrafter-detail-shots.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
-import {HttpClientModule} from '@angular/common/http';
+// import { InMemoryDataService }  from './in-memory-data.service';
+import { HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import {HttpClientModule} from '@angular/common/http';
     ShotDetailComponent,
     NewShotComponent,
     HandcrafterDetailShotsComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
@@ -43,9 +47,9 @@ import {HttpClientModule} from '@angular/common/http';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+      // InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@
 	  <a *ngFor="let handcrafter of handcrafters" class="col-1-4"
 	      routerLink="/user/{{handcrafter.id}}">
 	    <div class="module">
-	      <h5 routerLink="/user/{{handcrafter.id}}">{{handcrafter.name}}</h5>
+	      <h5 routerLink="/user/{{handcrafter.id}}">{{handcrafter.name}} / {{handcrafter.login}} </h5>
 	    </div>
 	  </a>
 	</div>

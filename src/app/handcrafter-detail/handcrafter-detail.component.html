@@ -5,24 +5,38 @@
   			<div id="profile-info" class="col-right col-right-top">
 				<div *ngIf="handcrafter">
 					<ul class= "list-group">
-						<li class="list-group-item" class="user_avatar"><img src="{{handcrafter.avatar}}" class="rounded-circle" width="50"></li>
+						<li class="list-group-item" class="user_avatar">
+							<img *ngIf="handcrafter?.avatar_url;else default_avatar" src="{{handcrafter.avatar_url}}" class="rounded-circle" width="50">
+							<ng-template #default_avatar><img src="/assets/img/user_avatar.jpg" class="rounded-circle" width="50"></ng-template>
+						</li>
 		  				<li class="list-group-item"><h2>{{handcrafter.name}}</h2></li>
 		  				<li class="list-group-item"><a><h4>{{handcrafter.city}}</h4></a></li>
 		  				<li class="list-group-item user_email" ><a>{{handcrafter.email}}</a></li>
 						<li class="list-group-item" class="user_description"><a>{{handcrafter.user_description}}</a>
 
 						<li class="list-group-item" ><a class="message-btn "  href="" original-title="Send a message about a work opportunity"> <span>Message</span></a></li>
-						<li class="list-group-item" class="creation_date"><a><h5>Creation date: {{handcrafter.creation_date}}</h5></a>
-						<li class="list-group-item" class="last_login"><a><h5>Last login: {{handcrafter.last_login}}</h5></a>
+						<li class="list-group-item" class="creation_date">
+							<a><h5>Creation date: {{handcrafter.created_at}}</h5></a>
+						</li>
+						<li class="list-group-item" class="last_login">
+							<a><h5>Last login: {{handcrafter.last_login_date}}</h5></a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<div id="profile-skills" class="col-right">
 				<h3>Skills</h3>
-				<li class="list-group-item" class="last_login"><a>{{handcrafter.skills}}</a>
+				<ul *ngIf="handcrafter?.skills;else no_skill" >
+					<li *ngFor="let skill of handcrafter.skills" class="list-group-item">
+						{{skill}}
+					</li>
+				</ul>
+				<ng-template #no_skill>No skills added yet</ng-template>
 			</div>
 			<div id="profile-elsewhere" class="col-right col-right-bottom">
 				<h3>Elsewhere</h3>
+				<span>
+				</span>
 			</div>
 		</div>	
 		<div class="col-md-8 handcrafter-shots"> 
