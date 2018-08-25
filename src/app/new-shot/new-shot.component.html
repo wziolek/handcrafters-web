@@ -8,13 +8,29 @@
 
     <div class="form-group">
       <label for="url">URL</label>
-      <input type="file" class="form-control" id="url" required #shotURL>
+      <input type="text" class="form-control" id="url" required #shotURL ><!-- ng2FileSelect [uploader]="uploader" -->
     </div>
 
     <div class="form-group">
       <label for="description">Description</label>
       <textarea class="form-control" id="description" required #shotDescription></textarea> 
-    </div>    
+    </div>
+
+    <!-- <div class="row uploadList" *ngFor="let item of uploader.queue">
+                            <div class="col-sm-4">{{item.file.name}}</div>
+                            <div class="col-sm-4">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" 
+                                    [ngStyle]="{'width':item.progress+'%'}"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <button type="button" class="btn btn-dark" (click)="item.upload()">Upload</button>
+                                    <button type="button" class="btn btn-danger" (click)="item.remove()">Cancel</button>
+                            </div>
+                        </div> -->
+
+    <!-- <button type="button" class="btn btn-primary" (click)="uploader.uploadAll()">Upload All</button> -->
     <button type="submit" class="btn btn-success" (click)="onSubmit(shotName.value, shotURL.value, shotDescription.value)">Submit</button>
   </div>
   <div [hidden]="!submitted">

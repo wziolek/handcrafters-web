@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Handcrafter } from '../handcrafter';
+import { ShotService } from '../shot.service';
 
 @Component({
   selector: 'app-handcrafter-detail-shots',
@@ -9,9 +10,12 @@ import { Handcrafter } from '../handcrafter';
 export class HandcrafterDetailShotsComponent implements OnInit {
   @Input() handcrafter: Handcrafter;
 
-  constructor() { }
+  constructor(private shotService: ShotService) { }
 
   ngOnInit() {}
-  
+
+  delete(id:number) {
+      this.shotService.deleteShot(id).subscribe();
+  }  
 
 }

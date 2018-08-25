@@ -19,6 +19,7 @@
 						<li class="list-inline-item">
 							<a class="shot_name" routerLink="/shot/{{shot.id}}">{{shot.name}}</a>
 							<a class="" routerLink="/shot/{{shot.id}}">Edit</a>
+							<a class="" (click)="delete(shot.id)">Delete</a>
 						</li>
 					</ul>
 				</div>
