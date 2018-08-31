@@ -15,11 +15,10 @@ export class UserPageComponent implements OnInit {
   settingsPage:number;
 
   constructor(
-  private route: ActivatedRoute,
-  private handcrafterService: HandcrafterService,
-  private location: Location,
-  ){
-  }
+    private route: ActivatedRoute,
+    private handcrafterService: HandcrafterService,
+    private location: Location,
+    ){}
 
   submitted = false;
 
@@ -32,7 +31,8 @@ export class UserPageComponent implements OnInit {
   }
 
   getCurrentUser(): void {
-    this.handcrafterService.getCurrentUser().subscribe(user => this.user = user);
+    this.handcrafterService.getCurrentUser()
+      .subscribe(user => this.user = user);
   }
 
   goBack(): void {

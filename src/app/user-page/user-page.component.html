@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="col col-sm-4">
-            <span class="header-user-name"><a routerLink="/myaccount">{{user.name}}</a>/</span> Profile<br>Edit your name, avatar, etc.<br>
+            <span class="header-user-name"><a routerLink="/myaccount">{{user['name']}}</a>/</span> Profile<br>Edit your name, avatar, etc.<br>
         </div>
     </div>
     <div class= "row main-row-user">
@@ -22,7 +22,7 @@
                 </li>
                 <li><a (click)=" changeSettingsPage(2)">Your shots</a></li>
                 <li><a (click)=" changeSettingsPage(3)">Add shot</a></li>
-                <li><a routerLink="/user/{{user.id}}">See your public profile</a></li>
+                <li><a routerLink="/user/{{user['id']}}">See your public profile</a></li>
             </ul>
         </div>
         <div class="col-md-8">

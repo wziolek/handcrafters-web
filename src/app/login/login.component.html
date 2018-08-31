@@ -1,4 +1,12 @@
 <h1>Login to your account</h1>
+<div [hidden]="message['type']='error'" class="alert alert-danger" role="alert">
+  There are following error in your form:
+  <ul>
+    <li *ngFor="let mess of message['messages']">
+      {{mess}}
+    </li>
+  </ul>
+</div>
 <form style="width:500px; display: inline-block;" #userForm="ngForm">
     <div class="form-group">
         <label for="name">E-mail</label>
@@ -11,7 +19,7 @@
         <input type="password" class="form-control" id="password"
                required name="password" #inputPassword>
     </div>
-    <button class="button button-primary" (click)="login(inputEmail.value, inputPassword.value)">Login test</button>
-    <button type="submit" class="btn btn-success">Login</button>
+    <button class="btn btn-success" (click)="login(inputEmail.value, inputPassword.value)">Login</button>
+    <!-- <button type="submit" class="btn btn-success">Login</button> -->
 </form>
 

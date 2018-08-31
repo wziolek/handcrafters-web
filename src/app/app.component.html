@@ -32,10 +32,18 @@
 						<a class="nav-link" routerLink="/handcrafters">Designers</a>
 					</li>
 				</ul>
-				<ul class="navbar-nav float-lg-right">
+				<ul *ngIf="user" class="navbar-nav float-lg-right">
+					<li>
+						<span>Welcome {{ user['email']}}</span>
+					</li>
 					<li>
 						<a class="nav-link" routerLink="/myaccount">My profile</a>
 					</li>
+					<li>
+						<a class="nav-link" (click)='logout()' routerLink="/">Logout</a>
+					</li>
+				</ul>
+				<ul *ngIf="!user" class="navbar-nav float-lg-right">
 					<li>
 						<a class="nav-link" routerLink="/sign-up">Sign up</a>
 					</li>

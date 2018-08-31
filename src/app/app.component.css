@@ -18,13 +18,18 @@ nav{
 .custom-toggler.navbar-toggler {
     border-color: white;
 } 
-nav a {
+
+nav li span {
+    padding: .5rem 1rem;
+}
+
+nav a, nav li span{
     text-decoration: none;
     margin-top: 11px;
     display: inline-block;
     vertical-align: middle;
 }
-nav a:visited, a:link {
+nav a:visited, a:link, nav li span{
     color: white;
 }
 

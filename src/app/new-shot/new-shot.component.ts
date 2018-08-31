@@ -26,12 +26,7 @@ export class NewShotComponent implements OnInit {
 	  private shotService: ShotService,
 	  private location: Location,
       private _fileService: FileService
-	 ){
-        // this.uploader.onCompleteItem = (item:any, response:any , status:any, headers:any) => {
-        //     console.log(JSON.parse(response))
-        //     //this.attachmentList.push(JSON.parse(response));
-        // }
-    }
+	 ){}
 
 	submitted = false;
 
